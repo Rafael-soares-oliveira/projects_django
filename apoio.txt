@@ -1,0 +1,12 @@
+Código de status de resposta http
+https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+
+Criar projeto
+
+
+Criar app
+python manage.py startapp nome_do_app
+
+Font-awesome
+https://cdnjs.com/libraries/font-awesome/5.15.4
+https://fontawesome.com/versions
