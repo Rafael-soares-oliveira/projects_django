@@ -1,12 +1,35 @@
 Código de status de resposta http
-https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+-> https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
 
 Criar projeto
+-> django-admin startproject nome_do_projeto
 
-
-Criar app
-python manage.py startapp nome_do_app
+Criar app - terminal
+-> python manage.py startapp nome_do_app
 
 Font-awesome
-https://cdnjs.com/libraries/font-awesome/5.15.4
-https://fontawesome.com/versions
+-> https://cdnjs.com/libraries/font-awesome/5.15.4
+-> https://fontawesome.com/versions
+
+
+armazenar os dados da pasta static - 
+necessário adicionar STATIC_ROOT = BASE_DIR / 'static' no settings.py
+-> python manage.py collectstatic
+
+configurar id das urls
+-> https://docs.djangoproject.com/en/5.0/topics/http/urls/
+
+Built-in template
+-> https://docs.djangoproject.com/pt-br/3.2/ref/templates/builtins/#ref-templates-builtins-tags
+
+Django template language
+-> https://docs.djangoproject.com/pt-br/3.2/ref/templates/language/
+
+template
+-> https://docs.djangoproject.com/pt-br/3.2/topics/templates/
+
+Model field reference
+-> https://docs.djangoproject.com/pt-br/3.2/ref/models/fields/
+
+QuerySet API reference
+-> https://docs.djangoproject.com/pt-br/3.2/ref/models/querysets/
