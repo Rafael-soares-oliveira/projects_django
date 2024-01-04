@@ -48,11 +48,15 @@
 
         {% if is_detail_page is True %}
             <div class="recipe-preparation-title">
-                <h2><i class="fas fa-blender"></i> Detalhe da receita</h2>
+                <h2><i class="fas fa-blender"></i> Modo de fazer</h2>
             </div>
 
             <div class="recipe-preparation">
-                {{ recipe.preparation_steps }}
+                {% if recipe.preparation_step_is_html is True %}
+                    {{ recipe.preparation_step|safe }}
+                {% else %}
+                    {{ recipe.preparation_step|linebreaksbr }}
+                {% endif %}
             </div>
         {% endif %}
 

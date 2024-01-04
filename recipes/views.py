@@ -1,28 +1,32 @@
-from django.shortcuts import render
-from utils.recipes.fake_register import make_recipe
-from .models import Recipe
+from django.shortcuts import render, get_list_or_404, get_object_or_404
+from recipes.models import Recipe
+
 # Create your views here.
 
 
 def home(request):
-    recipes = Recipe.objects.filter(is_published=True).order_by('-id')
+    recipes = get_list_or_404(Recipe.objects.filter(
+        is_published=True).order_by('-id'))
     return render(request, 'pages/home.html',
                   context={'name': 'Rafael Oliveira', 'recipes': recipes, })
 
 
 def category(request, category_id):
-    recipes = Recipe.objects.filter(
-        category__id=category_id, is_published=True).order_by('-id')
+    recipes = get_list_or_404(Recipe.objects.filter(
+        category__id=category_id, is_published=True).order_by('-id'))
+
     return render(request, 'pages/category.html',
                   context={
                       'recipes': recipes,
-                      'title': f'{recipes.first().category.name} - Category | '
+                      'title': f"{recipes[0].category.name} | "
                   })
 
 
-def recipes(request, id):
+def recipe(request, id):
+    recipe = get_object_or_404(Recipe, pk=id, is_published=True)
+
     return render(request, 'pages/recipe-view.html',
-                  context={'name': 'Rafael Oliveira',
-                           'recipe': make_recipe(),
-                           'is_detail_page': True,
-                           })
+                  context={
+                      'recipe': recipe,
+                      'is_detail_page': True,
+                  })
