@@ -1,6 +1,6 @@
 from django.urls import reverse, resolve
 from recipes import views
-from tests.test_recipe_base import RecipeTestBase
+from tests.test_recipe_base import RecipeTestBase, Recipe
 
 
 class Recipe_views_test_search(RecipeTestBase):
@@ -22,3 +22,9 @@ class Recipe_views_test_search(RecipeTestBase):
         response = self.client.get(url)
         self.assertIn('Search for &quot;&lt;Test&gt;&quot;',
                       response.content.decode('utf-8'))
+
+    def test_recipe_search_return_none_if_is_published_is_false(self):
+        Recipe.objects.all().delete()
+        self.make_recipe(is_published=False)
+        response = self.client.get(reverse('recipes:search') + '?q=Test')
+        self.assertIn('No recipes found', response.content.decode('utf-8'))

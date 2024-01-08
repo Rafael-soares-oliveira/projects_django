@@ -39,3 +39,9 @@ Gauge the effectiveness of tests
 
 Cross-site scripting
 -> https://www.kaspersky.com.br/resource-center/definitions/what-is-a-cross-site-scripting-attack
+
+Camp Filter
+-> https://docs.djangoproject.com/pt-br/3.2/topics/db/queries/#field-lookups
+
+Query Consult
+-> https://docs.djangoproject.com/pt-br/3.2/topics/db/queries/#complex-lookups-with-q-objects
