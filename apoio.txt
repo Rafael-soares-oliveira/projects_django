@@ -33,3 +33,9 @@ Model field reference
 
 QuerySet API reference
 -> https://docs.djangoproject.com/pt-br/3.2/ref/models/querysets/
+
+Gauge the effectiveness of tests
+- > https://coverage.readthedocs.io/en/7.4.0/
+
+Cross-site scripting
+-> https://www.kaspersky.com.br/resource-center/definitions/what-is-a-cross-site-scripting-attack
